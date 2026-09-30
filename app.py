@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request
+import os
 import requests
 import pandas as pd
 import numpy as np
@@ -38,7 +39,7 @@ def get_nasa_data(lat, lon):
 # ---------- OpenWeather Function ----------
 def get_weather_data(lat, lon):
     """Fetch current temperature and cloud cover."""
-    OPENWEATHER_API_KEY = "[REDACTED]"
+    OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", "")
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={OPENWEATHER_API_KEY}&units=metric"
 
     try:
