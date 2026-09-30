@@ -13,7 +13,7 @@ LAT = 12.9716   # Example: Bangalore
 LON = 77.5946
 START = "20250101"
 END = "20250131"
-OPENWEATHER_KEY = "[REDACTED]"  # <-- put your key here
+OPENWEATHER_KEY = ""  # Set OPENWEATHER_KEY from a secure environment variable.
 PANEL_EFFICIENCY = 0.18  # 18%
 PANEL_AREA = 10  # m²
 
@@ -129,7 +129,7 @@ To check API------------------------>
 
 import requests
 
-key = "[REDACTED]"  # your key
+key = ""  # Set this from a secure environment variable.
 lat, lon = 12.9716, 77.5946
 
 r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={key}&units=metric")
